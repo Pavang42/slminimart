@@ -1,0 +1,71 @@
+<div>
+  <div class="row">
+    <div class="col-md-3">
+    	<!-- <div ng-repeat="week_report in weeklyReports">
+			  <button class="btn" ng-click="detailWeeklyReport(week_report)">
+        		{{week_report.startDate}} - {{week_report.endDate}}
+        </button>
+        <br><br>
+      </div> -->
+      Select Week : <select ng-model="week" ng-change="detailWeeklyReports()">
+        <option ng-repeat="week_reports in weeklyReports" value="{{week_reports}}">{{week_reports.startDate}} - {{week_reports.endDate}}</option>
+      </select>
+    </div>
+  
+    <div class="col-md-6">
+      <div ng-show="detailWeekReport">
+        <h3> Weekly report of {{weeklyReportData.startDate}} - {{weeklyReportData.endDate}}</h3><br>
+        <table>
+          <tr>
+            <td>Total Cash </td>
+            <td>{{weeklyReportData.totalCash | currency}} </td>
+          </tr>
+          <tr>
+            <td>Total Coins </td> 
+            <td>{{weeklyReportData.totalCoins | currency}}</td>
+          </tr>
+          <!-- <tr>
+            <td>Total Evening Cash </td> 
+            <td>{{weeklyReportData.eveningCash | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Evening Coins </td> 
+            <td>{{weeklyReportData.eveningCoins | currency}}</td>
+          </tr> -->
+          <tr>
+            <td>Total Lotto Paidout </td>
+            <td>{{weeklyReportData.lottoPaidOut | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Vendor Coupons </td> 
+            <td>{{weeklyReportData.vendorCoupons | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Paid Out </td> 
+            <td>{{weeklyReportData.paidOut | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Food Stamp </td>
+            <td>{{weeklyReportData.foodStamp | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Credit Cards </td>
+            <td>{{weeklyReportData.creditCards | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Total </td> 
+            <td>{{weeklyReportData.total | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Total Mop Sale </td> 
+            <td> {{weeklyReportData.totalMopSale | currency}}</td>
+          </tr>
+          <tr>
+            <td>Difference </td> 
+            <td><span style="{{differenceClass}}">{{difference(weeklyReportData.total,weeklyReportData.totalMopSale) | currency}}</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

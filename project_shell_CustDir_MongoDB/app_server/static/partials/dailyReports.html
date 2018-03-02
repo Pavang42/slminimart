@@ -1,0 +1,75 @@
+<div>
+  <div class="row">
+    <div class="col-md-3">
+      Date : <input type="date" placeholder="MM/DD/YYYY" required ng-model="date"><br><br><p ng-show="dateRequiredError" style="{{dateError}}">Date is Required</p><br><br>
+      <button class="btn" ng-click="dailyReportofDate()">Generate Daily Report</button><br><br>
+    	<!-- <div ng-repeat="data in resources | orderBy : 'date'">
+			<button class="btn" ng-click="detailedDailyReport(data)">
+        		{{data.date}}
+      		</button><br><br>
+      	</div>
+    </div> -->
+    </div>
+    <div class="col-md-6">
+      <div ng-show="detailDailyReport">
+        <h3> Daily report of {{dailyReportData.date}}</h3>
+        <h3> Morning Shift : {{morningShiftEmployee}}</h3>
+        <h3> Evening Shift : {{eveningShiftEmployee}} </h3><br>
+        <table>
+          <tr>
+            <td>Morning Cash</td>  
+            <td>{{dailyReportData.morningCash | currency}}</td>
+          </tr>
+          <tr>
+            <td>Morning Coins</td>
+            <td>{{dailyReportData.morningCoins | currency}}</td>
+          </tr>
+          <tr>
+            <td>Evening Cash</td>
+            <td>{{dailyReportData.eveningCash | currency}}</td>
+          </tr>
+          <tr>
+            <td>Evening Coins</td>
+            <td>{{dailyReportData.eveningCoins | currency}}</td>
+          </tr>
+          <tr>
+            <td>Lotto Paidout</td> 
+            <td>{{dailyReportData.lottoPaidOut | currency}}</td>
+          </tr>
+          <tr>
+            <td>Vendor Coupons </td>
+            <td>{{dailyReportData.vendorCoupons | currency}}</td>
+          </tr>
+          <tr>
+            <td>Paid Out</td> 
+            <td>{{dailyReportData.paidOut | currency}}</td>
+          </tr>
+          <tr>
+            <td>Food Stamp</td>
+            <td>{{dailyReportData.foodStamp | currency}}</td>
+          </tr>
+          <tr>
+            <td>Credit Cards</td> 
+            <td>{{dailyReportData.creditCards | currency}}</td>
+          </tr>
+          <tr>
+            <td>Refunds</td> 
+            <td>{{dailyReportData.refunds | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total</td> 
+            <td>{{dailyReportData.total | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Mop Sale</td> 
+            <td>{{dailyReportData.totalMopSale | currency}}</td>
+          </tr>
+          <tr>
+            <td>Difference</td>
+            <td><span style="{{differenceClass}}">{{difference(dailyReportData.total,dailyReportData.totalMopSale) | currency}}</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+.profile{
+    border: 0px solid grey;
+    margin-bottom: 10px;
+    background-image: url('./../images/natural-paper.jpg');
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.showAnimate {
+    transition: all linear 2.5s;
+    height: 50px;
+}
+
+.ng-hide {
+    height: 0;
+}
+
+/*  ng-hide Animation  */
+.hide-fade.ng-hide-add, .hide-fade.ng-hide-remove {
+    -webkit-transition:all linear 1s;
+    -moz-transition:all linear 1s;
+    -o-transition:all linear 1s;
+    transition:all linear 1s;
+    display:block!important;
+}
+
+.hide-fade.ng-hide-add.ng-hide-add-active,
+.hide-fade.ng-hide-remove {
+    opacity:0;
+}
+
+.hide-fade.ng-hide-add,
+.hide-fade.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+}
+
+/* Styles for Register*/
+
+.register{
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+
+    /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+
+    /* IE 10 */
+    background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+    height:800px;
+}
+
+.centered-form{
+    margin-top: 60px;
+}
+
+.centered-form .panel{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+label.label-floatlabel {
+    font-weight: bold;
+    color: #46b8da;
+    font-size: 11px;
+}
+ td{
+    padding : 10px;
+    text-align: center;
+ }
+
+ h3{
+    font-family: serif;
+    font-size: 20px;
+ }
+
+ th, td {
+    padding:10px;align-content: center;
+ }

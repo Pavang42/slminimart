@@ -1,0 +1,113 @@
+<div class="row">
+	<div class="col-md-3">
+		<button class="btn" ng-click="createShiftDetails()">
+        	Enter Shift Details
+      	</button><br><br>
+      	<button class="btn" ng-click="generateShiftDetails()">
+        	Generate Shift Details
+      	</button><br><br>
+
+	</div>
+	<div ng-show="updateShift" class="col-md-6">
+		<div class="container">
+			<form role="form" name="shiftForm">
+			<div class="row">
+					<div class="form-group">
+						<label for="shiftDate">Date :</label><input type="date" name="date" ng-model="shiftDate" style="width:150px;" class="form-control input-sm" placeholder="MM/DD/YYYY" required>
+					</div>
+					<div class="form-group">
+						Name : <select name="name" ng-model="name" required>
+								<option ng-repeat="employee in employees" value="{{employee.username}}">{{employee.username}}</option>
+							</select>
+					</div>
+					<div class="form-group">
+						Shift : <select name="shift" ng-model="shift" required>
+							<option value="morning">Morning</option>
+							<option value="evening">Evening</option>
+						</select>
+					</div>
+					<div class="form-group">
+						Hours : <input type="text" name="hours" ng-model="hours" style="width:100px;" class="form-control input-sm" placeholder="Hours" required>
+					</div>
+					<div class="form-group">
+						Error Corrections : <input type="text" name="errors" ng-model="errorCorrections" style="width:120px;" class="form-control input-sm" placeholder="Error Corrections" required>
+					</div>
+					<div class="form-group">
+						Void Tickets : <input type="text" name="voidTickets" ng-model="voidTickets" style="width:100px;" class="form-control input-sm" placeholder="Void Tickets" required>
+					</div>
+					<div class="form-group" ng-slide-down="shiftDetailSuccess" lazy-render duration="0.5">
+						<h6 style="color: green;padding-left: 10px"> Shift Details Updated succesfully !!</h6>
+					</div>
+					<div class="form-group" ng-slide-down="dateFormatError" lazy-render duration="0.5">
+						<h6 style="color :red;padding-left: 10px"> Enter date in the format of 'MM/DD/YYYY' !!</h6>
+					</div>
+				<button class="btn btn-primary" ng-disabled="shiftForm.$invalid" ng-click="submitShift()">
+	        		Submit
+	      		</button>
+	      	</div>
+      		</form>
+		</div>
+	</div>
+
+	<div ng-show="shiftScheduleDetails" class="col-md-6">
+		<div class="btn-group">
+			<button ng-repeat="employee in employees" type="button" class="btn btn-primary" ng-click="generateEmployeeShiftDetail(employee.username)">{{employee.username}}</button>
+		</div>
+		
+		<br><br>
+		
+		<div ng-show="overallShifts">
+			<input type="date" ng-model="shiftDetailsDate" placeholder="MM/DD/YYYY"><br><br>
+			<button class="btn btn-primary" ng-click="generatingShiftDetails()">Generate Report</button><br><br>
+			<table border="1">
+				<tr ng-show="{{shiftsSchedule}}">
+					<thead>
+						<th>Date</th>
+						<th>Name</th>
+						<th>Shift</th>
+						<th>Hours</th>
+						<th>Error Corrections</th>
+						<th>Void Tickets</th>
+					</thead>
+				</tr>
+				<tr ng-repeat="schedule in shiftsSchedule | orderBy : 'date'">
+					<td style="padding: 10px;"> {{ schedule.date }} </td>
+					<td style="padding: 10px;"> {{ schedule.name }} </td>
+					<td style="padding: 10px;"> {{ schedule.shift }} </td>
+					<td style="padding: 10px;"> {{ schedule.hours }} </td>
+					<td style="padding: 10px;"> {{ schedule.errorcorrections }} </td>
+					<td style="padding: 10px;"> {{ schedule.voidtickets }} </td>
+				</tr>
+			</table>
+		</div>
+		<div ng-show="individualShiftHour">
+			<table border="1">
+				<tr>
+					<td>Name</td>
+					<td>Total Hours</td>
+					<td>Total Pay</td>
+					<td>Pay Taken</td>
+					<td>Pay Left</td>
+				</tr>
+				<tr>
+					<td>{{employee_name}}</td>
+					<td>{{individualShiftHours}}</td>
+					<td>{{payTotal | currency}}</td>
+					<td>{{payTaken | currency}}</td>
+					<td class="{{differenceClass}}">{{payLeft | currency}}</td>
+				</tr>
+			</table>
+			<br><br>
+			<table border="1">
+				<tr>
+					<td>Total Error Corrections</td>
+					<td>Total Void Tickets</td>
+				</tr>
+				<tr>
+					<td>{{totalErrorCorrections}}</td>
+					<td>{{totalVoidTickets}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

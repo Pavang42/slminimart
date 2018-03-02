@@ -1,0 +1,48 @@
+<div class="register">
+<div class="container">
+	<div class="row centered-form">
+		<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Registration</h3>
+				</div>
+				<div class="panel-body">
+					<form role="form" name="registerForm">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="text" name="first_name" ng-model="firstname" class="form-control input-sm floatlabel" placeholder="First Name" required>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="text" name="last_name" ng-model="lastname" class="form-control input-sm" placeholder="Last Name" required>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="username" ng-model="user_name" class="form-control input-sm" placeholder="User Name" required>
+						</div>
+
+						<div class="form-group">
+							<input type="password" name="password" ng-model="password" class="form-control input-sm" placeholder="Password" required>
+						</div>
+
+						
+						<div class="form-group" ng-slide-down="registerSuccessMssg" lazy-render duration="0.5">
+							<h6 style="color: green;padding-left: 10px"> User registered successfully !!</h6>
+						</div>
+
+						<div class="form-group" ng-slide-down="registerErrorMssg" lazy-render duration="0.5">
+							<h6 style="color: red;padding-left: 10px"> ERROR ! User was not registered to the system!!</h6>
+						</div>
+						<input type="submit" value="Register" ng-click="register()"  ng-disabled="registerForm.$invalid" class="btn btn-info btn-block">
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,50 @@
+ {
+      "gender": "female",
+      "name": {
+        "title": "mrs",
+        "first": "henriette",
+        "last": "ullrich"
+      },
+      "location": {
+        "street": "3744 mozartstraße",
+        "city": "rottweil",
+        "state": "schleswig-holstein",
+        "postcode": 35269
+      },
+      "email": "henriette.ullrich@example.com",
+      "login": {
+        "username": "lazyrabbit933",
+        "password": "blake",
+        "salt": "1jEZbtEk",
+        "md5": "263a65e60a06c7a6720c8c68915cd202",
+        "sha1": "7fa67ee91f782dc934ce9816426bfe45a518a12d",
+        "sha256": "ae80643ae053cc5d6e42e51ad201759f1fa36396a8d6ab11b1a4c63c96cb8ed4"
+      },
+      "registered": 1211118771,
+      "dob": 924762062,
+      "phone": "0505-8180975",
+      "cell": "0178-5025520",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/95.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/95.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/95.jpg"
+      },
+      "nat": "DE",
+      "skills":{
+          "java":"-1",
+          "sql":"1",
+          "ui":"2",
+          "angular":"1",
+          "jquery":"3",
+          "javascript":"4",
+           "css":"3",
+           "d3":"0.5",
+           "html5":"1",
+           "css3":"1",
+           "nodejs":"1"
+      }
+    },

@@ -1,0 +1,85 @@
+<div class="register">
+<div class="container">
+	<div class="row centered-form">
+		<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Daily Report</h3>
+				</div>
+				<div class="panel-body">
+					<form role="form" method="post" name="registerForm">
+						
+						<div class="form-group">
+							<input type="date" name="date" ng-model="date" class="form-control input-sm" placeholder="MM/DD/YYYY" required>
+						</div>
+							
+						<div class="form-group">
+							<input type="text" name="morningCash" ng-model="morningCash" class="form-control input-sm" placeholder="Morning Cash" required>
+						</div>
+						
+						<div class="form-group">
+							<input type="text" name="morningCoins" ng-model="morningCoins" class="form-control input-sm" placeholder="Morning Coins" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="eveningCash" ng-model="eveningCash" class="form-control input-sm" placeholder="Evening Cash" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="eveningCoins" ng-model="eveningCoins" class="form-control input-sm" placeholder="Evening Coins" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="lottoPaidOut" ng-model="lottoPaidOut" class="form-control input-sm" placeholder="Lotto Paidout" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="vendorCoupons" ng-model="vendorCoupons" class="form-control input-sm" placeholder="Vendor Coupons" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="paidOut" ng-model="paidOut" class="form-control input-sm" placeholder="Paid Outs" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="foodStamp" ng-model="foodStamp" class="form-control input-sm" placeholder="Food Stamp" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="creditCards" ng-model="creditCards" class="form-control input-sm" placeholder="Credit cards" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="refunds" ng-model="refunds" class="form-control input-sm" placeholder="Refunds" required>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="totalMopSale" ng-model="totalMopSale" class="form-control input-sm" placeholder="Total Mop Sale" required>
+						</div>
+
+						<div class="form-group">
+							<input type="file" name="dailyReportPicture" id="image" file-model="dailyReportPicture" class="form-control input-sm">
+						</div>
+						<!-- <div class="form-group">
+							<input type="file" name="dailyReportPicture" ng-model="dailyReportPicture" onchange="angular.element(this).scope().fileNameChanged(this)" class="form-control input-sm">
+						</div> -->
+
+						<div class="form-group" ng-slide-down="registerSuccessMssg" lazy-render duration="0.5">
+							<h6 style="color: green;padding-left: 10px"> Daily Report submitted successfully !!</h6>
+						</div>
+
+						<div class="form-group" ng-slide-down="registerErrorMssg" lazy-render duration="0.5">
+							<h6 style="color: red;padding-left: 10px"> ERROR ! User was not registered to the system!!</h6>
+						</div>
+						<div class="form-group" ng-slide-down="dateFormatError" lazy-render>
+							<h6 style="color: red;padding-left: 10px"> ERROR ! Date has to be in the format of 'MM/DD/YYYY'!!</h6>
+						</div>
+						<input type="submit" value="Submit new Daily Report" ng-click="dailyReport()"  ng-disabled="registerForm.$invalid" class="btn btn-info btn-block">
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
